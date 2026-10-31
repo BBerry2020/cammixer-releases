@@ -4,16 +4,16 @@ Installer di **CamMixer**: le webcam virtuali con effetti, sfondi e sottopancia 
 
 Qui ci sono solo i file compilati (su GitHub Actions); il codice sorgente è in un repository privato.
 
-## Scaricamento diretto (versione 1.1.0)
+## Scaricamento diretto (versione 1.1.1)
 
-- Windows 11: [CamMixer-Setup-1.1.0.exe](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.1.0.exe)
-- macOS: [CamMixer-macOS-1.1.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.1.0.zip)
+- Windows 11: [CamMixer-Setup-1.1.1.exe](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.1.1.exe)
+- macOS: [CamMixer-macOS-1.1.1.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.1.1.zip)
 
 Le impronte SHA-256 sono in [`aggiornamenti.json`](aggiornamenti.json). Dalle prossime versioni i file arrivano anche nella pagina [Releases](https://github.com/BBerry2020/cammixer-releases/releases).
 
 ## Windows 11
 
-1. Scarica **CamMixer-Setup-*versione*.exe** (qui sopra o dall'[ultimo rilascio](https://github.com/BBerry2020/cammixer-releases/releases/latest)) e avvialo. L'installer non è firmato: se compare «Windows ha protetto il PC», scegli *Ulteriori informazioni › Esegui comunque*.
+1. Scarica **CamMixer-Setup-*versione*.exe** (qui sopra o dall'[ultimo rilascio](https://github.com/BBerry2020/cammixer-releases/releases/latest)) e avvialo. Contiene anche l'estensione per Edge/Chrome e la tiene aggiornata; la prima volta va caricata in Edge (si apre una guida). L'installer non è firmato: se compare «Windows ha protetto il PC», scegli *Ulteriori informazioni › Esegui comunque*.
 2. In Teams: *Impostazioni › Dispositivi › Fotocamera › **CamMixer***.
 3. Nelle impostazioni dell'estensione, riquadro *Webcam per Teams, Zoom e le altre app*, scegli quale webcam virtuale inviare. Microsoft Edge deve restare aperto.
 
