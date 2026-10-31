@@ -1,0 +1,14 @@
+{
+  "versione": "1.1.0",
+  "data": "2026-10-31",
+  "windows": {
+    "versione": "1.1.0",
+    "url": "https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.1.0.exe",
+    "sha256": "a23d7b11d0eb15808fa859154e7563e76e24d240d8d1b51f481c56bcd39c09dc"
+  },
+  "macos": {
+    "versione": "1.1.0",
+    "url": "https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.1.0.zip",
+    "sha256": "ac25ae26672b3d00afcee7bc63b248d6715695317d2fb000eebe1bb955820623"
+  }
+}

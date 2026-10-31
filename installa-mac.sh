@@ -15,6 +15,7 @@ AGENTE="$HOME/Library/LaunchAgents/$ETICHETTA.plist"
 DOMINIO="gui/$(id -u)"
 MANIFESTO="https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/aggiornamenti.json"
 PREFISSO="https://github.com/BBerry2020/cammixer-releases/releases/download/"
+PREFISSO_GIT="https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/"
 
 if [ "${1:-}" = "--rimuovi" ]; then
   launchctl bootout "$DOMINIO/$ETICHETTA" 2>/dev/null || true
@@ -39,7 +40,7 @@ else
   curl -fsSL "$MANIFESTO" -o "$TMP/aggiornamenti.json"
   URL="$(plutil -extract macos.url raw -o - "$TMP/aggiornamenti.json")"
   IMPRONTA="$(plutil -extract macos.sha256 raw -o - "$TMP/aggiornamenti.json")"
-  case "$URL" in "$PREFISSO"*) ;; *) echo "Indirizzo di scaricamento non valido: $URL"; exit 1 ;; esac
+  case "$URL" in "$PREFISSO"* | "$PREFISSO_GIT"*) ;; *) echo "Indirizzo di scaricamento non valido: $URL"; exit 1 ;; esac
   curl -fsSL "$URL" -o "$TMP/ponte.zip"
   if [ "$(shasum -a 256 "$TMP/ponte.zip" | cut -d' ' -f1)" != "$IMPRONTA" ]; then echo "File scaricato non valido (impronta diversa)."; exit 1; fi
   ditto -x -k "$TMP/ponte.zip" "$TMP/x"
