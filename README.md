@@ -14,6 +14,8 @@ The interface is in English; the flags at the top of the extension settings swit
 
 When a new version comes out, the extension settings show *Open the releases page*: download the new installer and run it. The Windows program does not download or install anything by itself.
 
+Voice with filters and effects in Teams desktop too: install the free [VB-Cable](https://vb-audio.com/Cable/) (VB-Audio) once, tick *Send the voice too* in the extension settings and choose the microphone **CABLE Output (VB-Audio Virtual Cable)** in Teams.
+
 Logs for troubleshooting (installation, program, extension, webcam) are all in `C:\Program Files\CamMixer\logs`.
 
 ## Extension for Edge and Chrome

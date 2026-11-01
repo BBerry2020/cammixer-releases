@@ -2,6 +2,16 @@
 
 Each release has two numbers: the **programs** (Windows installer and macOS program, `versione-programmi.txt`) and the **extension** for Edge and Chrome (`manifest.json`). The Windows installer always contains the extension. *Built with* lists the versions of the libraries and build tools; the full register is in [THIRD-PARTY.md](THIRD-PARTY.md). Hashes and check results of every published release are in the release notes and in `verifiche/` in [cammixer-releases](https://github.com/BBerry2020/cammixer-releases).
 
+## 1.7.0 (extension 1.11.0) - 2026-11-01
+
+- **Voice for Teams desktop and the other apps, together with the video**: the mixed voice (microphone with the voice filters and effect of the virtual webcam sent to the apps) goes into a virtual audio cable, [VB-Cable](https://vb-audio.com/Cable/) by VB-Audio, installed once by the user (Windows has no virtual microphone without a signed driver). In Teams choose the microphone "CABLE Output (VB-Audio Virtual Cable)".
+  - settings: "Send the voice too", the cable (found by itself), "When" and the status;
+  - the real microphone opens only while an app on the computer is using a microphone: the CamMixer program reads it from the Windows privacy settings (on macOS: while OBS reads the video); or always, if chosen;
+  - the effect changes on the fly; if the cable is disconnected the voice stops.
+- Tests: what comes out of a virtual cable is measured (Linux, PulseAudio, with a fake CamMixer program); on Windows, a fake app using a microphone must be reported by the program, and the program must write the extension log lines.
+
+Built with: Inno Setup 7.1.1 · MediaPipe Tasks Vision 1.2.0 · Three.js r187.
+
 ## 1.6.0 (extension 1.10.0) - 2026-11-01
 
 - **All the logs in one folder: `C:\Program Files\CamMixer\logs`** (on macOS next to the program's log, in `~/Library/Application Support/CamMixer`):
