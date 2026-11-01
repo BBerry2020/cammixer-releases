@@ -1,4 +1,43 @@
 {
-  "esito": "NON VERIFICATO",
-  "nota": "pubblicato prima della verifica"
+  "esito": "NON SUPERATA (pubblicata comunque su richiesta)",
+  "data": "2026-11-01",
+  "file": {
+    "CamMixer-Setup-1.2.0.exe": {
+      "sha256": "45987118f4bf0f59cfb9d3bb44f2e37244bbbf3bd539937abd141984bf9ef09c",
+      "defender": "pulito",
+      "clamav": "pulito",
+      "virustotal": {
+        "malicious": 3,
+        "positivi": [
+          "APEX: Malicious",
+          "DeepInstinct: MALICIOUS",
+          "Skyhigh: BehavesLike.Win32.ObfuscatedPoly.tc"
+        ],
+        "link": "https://www.virustotal.com/gui/file/45987118f4bf0f59cfb9d3bb44f2e37244bbbf3bd539937abd141984bf9ef09c"
+      }
+    },
+    "CamMixer-macOS-1.2.0.zip": {
+      "sha256": "9ea1557760690b6ec601bf6ec0d0422db3442ff7ea97d793d17d937af18da221",
+      "defender": "pulito",
+      "clamav": "pulito",
+      "virustotal": {
+        "malicious": 0,
+        "link": "https://www.virustotal.com/gui/file/9ea1557760690b6ec601bf6ec0d0422db3442ff7ea97d793d17d937af18da221"
+      }
+    },
+    "cammixer-ponte": {
+      "sha256": "f1396e39a744f8a662624421bcbe93f76f64b2650d41bd264e8aeccc6e7817b4",
+      "defender": "pulito",
+      "clamav": "pulito",
+      "virustotal": {
+        "malicious": 0,
+        "link": "https://www.virustotal.com/gui/file/f1396e39a744f8a662624421bcbe93f76f64b2650d41bd264e8aeccc6e7817b4"
+      }
+    },
+    "CamMixer-estensione-1.6.0.zip": {
+      "defender": "pulito",
+      "clamav": "pulito",
+      "virustotal": "non inviato (non è un binario)"
+    }
+  }
 }

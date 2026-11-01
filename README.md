@@ -10,7 +10,7 @@ Installer di **CamMixer**: le webcam virtuali con effetti, sfondi e sottopancia 
 - macOS: [CamMixer-macOS-1.2.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.2.0.zip)
 - Estensione per Edge e Chrome (serve solo senza l'installer per Windows): [CamMixer-estensione-1.6.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-estensione-1.6.0.zip)
 
-Impronte e note in [`verifiche/CamMixer-1.2.0.md`](verifiche/CamMixer-1.2.0.md). **Questa versione è stata pubblicata prima che la verifica antivirus fosse completata**: il risultato verrà aggiunto lì appena disponibile.
+Impronte e note in [`verifiche/CamMixer-1.2.0.md`](verifiche/CamMixer-1.2.0.md). **Questa versione è stata pubblicata prima che la verifica antivirus fosse completata.** Risultato arrivato dopo: Microsoft Defender e ClamAV non trovano nulla; su VirusTotal 3 motori euristici su circa 70 segnalano l'installer (dettagli e link nelle note). Il programma per macOS e lo zip non hanno segnalazioni.
 
 ## Windows 11
 
