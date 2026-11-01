@@ -2,7 +2,7 @@
 
 Each release has two numbers: the **programs** (Windows installer and macOS program, `versione-programmi.txt`) and the **extension** for Edge and Chrome (`manifest.json`). The Windows installer always contains the extension. *Built with* lists the versions of the libraries and build tools; the full register is in [THIRD-PARTY.md](THIRD-PARTY.md). Hashes and check results of every published release are in the release notes and in `verifiche/` in [cammixer-releases](https://github.com/BBerry2020/cammixer-releases).
 
-## 1.5.0 (extension 1.9.0) - in preparation
+## 1.5.0 (extension 1.9.0) - 2026-11-01
 
 - **Voice: the microphone is the second input of the mixer.** Each virtual webcam has its voice:
   - microphone choice, level bar (next to the preview too), "Listen to yourself" with headphones, browser noise and echo reduction, volume up to 200%;
