@@ -2,6 +2,20 @@
 
 Each release has two numbers: the **programs** (Windows installer and macOS program, `versione-programmi.txt`) and the **extension** for Edge and Chrome (`manifest.json`). The Windows installer always contains the extension. *Built with* lists the versions of the libraries and build tools; the full register is in [THIRD-PARTY.md](THIRD-PARTY.md). Hashes and check results of every published release are in the release notes and in `verifiche/` in [cammixer-releases](https://github.com/BBerry2020/cammixer-releases).
 
+## 1.5.0 (extension 1.9.0) - in preparation
+
+- **Voice: the microphone is the second input of the mixer.** Each virtual webcam has its voice:
+  - microphone choice, level bar (next to the preview too), "Listen to yourself" with headphones, browser noise and echo reduction, volume up to 200%;
+  - voice filters: cut low rumble, clearer voice, even out the volume, silence when you are not speaking;
+  - fun voice effects: trap autotune (the voice snaps to the nearest semitone), robot, chipmunk, monster, alien, old telephone, walkie-talkie, megaphone, echo, cathedral, with an effect amount;
+  - in websites the microphone goes through the mixer too, when a virtual webcam is used instead of the real one; the effect can be changed from the panel during the call;
+  - Teams desktop and the other apps get the real microphone, without effects.
+- **Recordings have sound by default**: the voice of the virtual webcam, with its filters and effect (in 1.4.0 the microphone had to be turned on, and it was off).
+- New voice test (`prova-voce.py`, Chromium and Edge): pitch and spectrum of every effect measured on a fake microphone.
+- Releases are published only if the browser tests pass too (recording and voice on Chromium and Edge, languages), besides the supply-chain checks.
+
+Built with: Inno Setup 7.1.1 · MediaPipe Tasks Vision 1.2.0 · Three.js r187.
+
 ## 1.4.0 (extension 1.8.0) - 2026-11-01
 
 - **Recording and screenshots** of what the virtual webcam sends, as the others see it (not mirrored):
