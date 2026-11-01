@@ -6,13 +6,15 @@ Installers of **CamMixer**: virtual webcams with effects, backgrounds and lower 
 
 The interface is in English; the flags at the top of the extension settings switch it to Italian (Italiano).
 
-## Direct download (version 1.2.0, extension 1.6.0)
+## Direct download (version 1.3.1, extension 1.7.0)
 
-- Windows 11: [CamMixer-Setup-1.2.0.exe](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.2.0.exe)
-- macOS: [CamMixer-macOS-1.2.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.2.0.zip)
-- Extension for Edge and Chrome (only needed without the Windows installer): [CamMixer-estensione-1.6.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-estensione-1.6.0.zip)
+- Windows 11: [CamMixer-Setup-1.3.1.exe](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.3.1.exe)
+- macOS: [CamMixer-macOS-1.3.1.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.3.1.zip)
+- Extension for Edge and Chrome (only needed without the Windows installer): [CamMixer-estensione-1.7.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-estensione-1.7.0.zip)
 
-Hashes and notes in [`verifiche/CamMixer-1.2.0.md`](verifiche/CamMixer-1.2.0.md). **This version was published before the antivirus check was complete.** Result received afterwards: Microsoft Defender and ClamAV find nothing; on VirusTotal 3 heuristic engines out of about 70 flag the installer (details and links in the notes). The macOS program and the zip files have no detections.
+What changed in each version: [CHANGELOG.md](CHANGELOG.md). Hashes and antivirus results: [`verifiche/CamMixer-1.3.1.md`](verifiche/CamMixer-1.3.1.md).
+
+**This version was published on request although the antivirus check did not pass.** Microsoft Defender and ClamAV find nothing, and the programs inside the installer are clean on every VirusTotal engine. On VirusTotal, 5 machine-learning or heuristic engines out of about 70 flag the installer itself; Microsoft no longer does. The macOS program and the zip files have no detections.
 
 ## Windows 11
 

@@ -49,15 +49,20 @@ They are not in the repository, but the built programs contain part of them.
 
 | Component | Version | Licence | Use |
 |---|---|---|---|
-| [Inno Setup](https://jrsoftware.org/isinfo.php) | 6.x (the one on the GitHub windows-2025 runner) | [Inno Setup License](licenses/Inno-Setup.txt) | creates CamMixer-Setup-<version>.exe from windows/installer/cammixer.iss; the setup program contains Inno Setup code |
+| [Inno Setup](https://jrsoftware.org/isinfo.php) | 7.1.1 | [Inno Setup License](licenses/Inno-Setup.txt) | creates CamMixer-Setup-<version>.exe from windows/installer/cammixer.iss (32-bit x86 installer, like before; the build installs exactly this version of the 64-bit compiler edition after checking its digital signature: .github/inno-setup.ps1); the setup program contains Inno Setup code |
 | [Microsoft C/C++ runtime library (MSVC)](https://learn.microsoft.com/cpp/c-runtime-library/) | Visual Studio 2022 on the windows-2025 runner | Microsoft Visual Studio licence (redistributable code) | statically linked (/MT) in CamMixer.exe and CamMixerCam.dll |
 
 ### Inno Setup
 
 - Copyright: Jordan Russell, Martijn Laan
-- Source: https://jrsoftware.org/isdl.php
+- Source: https://github.com/jrsoftware/issrc/releases/tag/is-7_1_1
+- Package: https://github.com/jrsoftware/issrc/releases/download/is-7_1_1/innosetup-7.1.1-x64.exe (`SHA-256 8a5a6711c3766a6e5fb74f280ba0e3551e719ce94538d901fdbd1f8f9920b3f0, signed by Pyrsys B.V.`)
 - Distributed in: Windows installer
 - Changes: none
+- Version history:
+  - CamMixer 1.1.0 - 1.2.0: Inno Setup 6.x preinstalled on the GitHub windows-2025 runner (version not pinned)
+  - CamMixer 1.3.0: same, not published (installer flagged by 4 machine-learning engines on VirusTotal)
+  - CamMixer 1.3.1: Inno Setup 7.1.1 (pinned; 6.7.4 evaluated and pinned briefly on a work branch, never released)
 
 ### Microsoft C/C++ runtime library (MSVC)
 
@@ -114,7 +119,7 @@ Used by GitHub Actions and by the automatic tests.
 | [Pillow](https://python-pillow.org) | latest on PyPI | MIT-CMU | tests: reading the colours of the frames |
 | [Requests](https://requests.readthedocs.io) | latest on PyPI | [Apache-2.0](licenses/Apache-2.0.txt) | antivirus check (.github/verifica.py) |
 | [ClamAV](https://www.clamav.net) | Ubuntu package on the runner | GPL-2.0 | antivirus check before publishing (used as a program, not included) |
-| [Official GitHub Actions (checkout, upload-artifact, download-artifact, setup-python)](https://github.com/actions) | v4 and v5 | MIT | builds, tests, check and release on GitHub Actions |
+| [Official GitHub Actions (checkout, upload-artifact, download-artifact, setup-python)](https://github.com/actions) | checkout v7, upload-artifact v7, download-artifact v8, setup-python v7 | MIT | builds, tests, check and release on GitHub Actions |
 
 ## How to add third-party code
 
