@@ -11,6 +11,7 @@ Each release has two numbers: the **programs** (Windows installer and macOS prog
   - files in the browser's downloads folder, named `CamMixer-<webcam>-<date>_<time>`;
   - at most 60 minutes or 1.5 GB per recording; the video is saved by itself also when the call ends or the webcam stops.
 - New `registrazione` test on Playwright Chromium (Linux) and Microsoft Edge (Windows): every recorded file is checked frame by frame.
+- Test note: the extra Direct3D read of the Windows test (not blocking) fails with `DXGI_ERROR_DEVICE_REMOVED` on the newest GitHub x64 runner image (20261030, Windows build 26100.33674) and now and then on the ARM64 runners, which have no graphics card. With the previous x64 image it passes with 1.3.3 and 1.4.0 alike; the Windows programs are unchanged from 1.3.3.
 
 Built with: Inno Setup 7.1.1 · MediaPipe Tasks Vision 1.2.0 · Three.js r187.
 
