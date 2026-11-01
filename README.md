@@ -14,6 +14,8 @@ The interface is in English; the flags at the top of the extension settings swit
 
 When a new version comes out, the extension settings show *Open the releases page*: download the new installer and run it. The Windows program does not download or install anything by itself.
 
+Logs for troubleshooting (installation, program, extension, webcam) are all in `C:\Program Files\CamMixer\logs`.
+
 ## Extension for Edge and Chrome
 
 On Windows there is no need to download it: it is inside the installer, which copies it and keeps it updated. Otherwise (macOS, or websites only):

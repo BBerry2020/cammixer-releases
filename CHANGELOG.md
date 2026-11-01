@@ -2,6 +2,19 @@
 
 Each release has two numbers: the **programs** (Windows installer and macOS program, `versione-programmi.txt`) and the **extension** for Edge and Chrome (`manifest.json`). The Windows installer always contains the extension. *Built with* lists the versions of the libraries and build tools; the full register is in [THIRD-PARTY.md](THIRD-PARTY.md). Hashes and check results of every published release are in the release notes and in `verifiche/` in [cammixer-releases](https://github.com/BBerry2020/cammixer-releases).
 
+## 1.6.0 (extension 1.10.0) - 2026-11-01
+
+- **All the logs in one folder: `C:\Program Files\CamMixer\logs`** (on macOS next to the program's log, in `~/Library/Application Support/CamMixer`):
+  - `install.log` and `setup-last.log` (installer; the existing `install.log` is moved there with its history);
+  - `ponte.log` (CamMixer program; it was in `%LOCALAPPDATA%\CamMixer`);
+  - **`estensione.log`, new: the browser extension's log**, written by the CamMixer program: virtual webcams on and off with the real webcam used, cut-out, components turned off by an error, voice, recordings and screenshots, connection to the program, apps opening the webcam, updates, unhandled errors; in websites only the website name;
+  - `CamMixerCam.log` (video source; it was in the temporary folder of the Frame Server service).
+- The installer creates `logs` writable by the users and by the Frame Server service only; uninstalling removes it.
+- Settings: the log folder is shown in the box for Teams and the other apps; "Save the extension log" saves the last 3000 lines as a text file, also without the program.
+- Tests: the Windows test checks the logs folder (files, permissions, no programs inside, lines from the extension in `estensione.log`); the recording test checks the extension log lines and the saved file.
+
+Built with: Inno Setup 7.1.1 · MediaPipe Tasks Vision 1.2.0 · Three.js r187.
+
 ## 1.5.0 (extension 1.9.0) - 2026-11-01
 
 - **Voice: the microphone is the second input of the mixer.** Each virtual webcam has its voice:
