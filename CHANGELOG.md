@@ -2,6 +2,18 @@
 
 Each release has two numbers: the **programs** (Windows installer and macOS program, `versione-programmi.txt`) and the **extension** for Edge and Chrome (`manifest.json`). The Windows installer always contains the extension. *Built with* lists the versions of the libraries and build tools; the full register is in [THIRD-PARTY.md](THIRD-PARTY.md). Hashes and check results of every published release are in the release notes and in `verifiche/` in [cammixer-releases](https://github.com/BBerry2020/cammixer-releases).
 
+## 1.4.0 (extension 1.8.0) - 2026-11-01
+
+- **Recording and screenshots** of what the virtual webcam sends, as the others see it (not mirrored):
+  - "Record" and "Screenshot" next to the preview in the settings, and in the panel during a chat; a red "REC" mark with the time on the preview and on the collapsed panel;
+  - videos in MP4 (H.264, with AAC audio in Edge and Chrome) or WebM (VP9), quality 1.5, 4 or 8 Mbit/s, optionally with the microphone;
+  - screenshots in PNG at full resolution;
+  - files in the browser's downloads folder, named `CamMixer-<webcam>-<date>_<time>`;
+  - at most 60 minutes or 1.5 GB per recording; the video is saved by itself also when the call ends or the webcam stops.
+- New `registrazione` test on Playwright Chromium (Linux) and Microsoft Edge (Windows): every recorded file is checked frame by frame.
+
+Built with: Inno Setup 7.1.1 · MediaPipe Tasks Vision 1.2.0 · Three.js r187.
+
 ## 1.3.3 (extension 1.7.2) - 2026-11-01
 
 Everything in 1.3.2, plus:

@@ -1,18 +1,18 @@
 # CamMixer · releases
 
-Installers of **CamMixer**: virtual webcams with effects, backgrounds and lower thirds created by the extension for Microsoft Edge and Chrome, usable also in **Microsoft Teams desktop**, Zoom and the other apps on the computer.
+Installers of **CamMixer**: virtual webcams with effects, backgrounds and lower thirds created by the extension for Microsoft Edge and Chrome, usable also in **Microsoft Teams desktop**, Zoom and the other apps on the computer, and recordable as videos or screenshots.
 
 **All CamMixer releases are here**: Windows installer, macOS program and extension for Edge and Chrome. They are built on GitHub Actions and gated by supply-chain checks before publishing; the source code is in a private repository.
 
 The interface is in English; the flags at the top of the extension settings switch it to Italian (Italiano).
 
-## Direct download (version 1.3.3, extension 1.7.2)
+## Direct download (version 1.4.0, extension 1.8.0)
 
-- Windows 11: [CamMixer-Setup-1.3.3.exe](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.3.3.exe)
-- macOS: [CamMixer-macOS-1.3.3.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.3.3.zip)
-- Extension for Edge and Chrome (only needed without the Windows installer): [CamMixer-estensione-1.7.2.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-estensione-1.7.2.zip)
+- Windows 11: [CamMixer-Setup-1.4.0.exe](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.4.0.exe)
+- macOS: [CamMixer-macOS-1.4.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.4.0.zip)
+- Extension for Edge and Chrome (only needed without the Windows installer): [CamMixer-estensione-1.8.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-estensione-1.8.0.zip)
 
-What changed in each version: [CHANGELOG.md](CHANGELOG.md). Hashes, versions it is built with and supply-chain check results: [`verifiche/CamMixer-1.3.3.md`](verifiche/CamMixer-1.3.3.md).
+What changed in each version: [CHANGELOG.md](CHANGELOG.md). Hashes, versions it is built with and supply-chain check results: [`verifiche/CamMixer-1.4.0.md`](verifiche/CamMixer-1.4.0.md).
 
 ## Windows 11
 
