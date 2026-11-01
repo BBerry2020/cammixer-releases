@@ -62,7 +62,7 @@ They are not in the repository, but the built programs contain part of them.
 - Version history:
   - CamMixer 1.1.0 - 1.2.0: Inno Setup 6.x preinstalled on the GitHub windows-2025 runner (version not pinned)
   - CamMixer 1.3.0: same, not published (installer flagged by 4 machine-learning engines on VirusTotal)
-  - CamMixer 1.3.1: Inno Setup 7.1.1 (pinned; 6.7.4 evaluated and pinned briefly on a work branch, never released)
+  - CamMixer 1.3.1 and later: Inno Setup 7.1.1 (pinned by version, SHA-256 and signature; 6.7.4 evaluated and pinned briefly on a work branch, never released)
 
 ### Microsoft C/C++ runtime library (MSVC)
 
@@ -117,9 +117,7 @@ Used by GitHub Actions and by the automatic tests.
 | [Playwright (Python)](https://playwright.dev/python/) | latest on PyPI | [Apache-2.0](licenses/Apache-2.0.txt) | automatic tests with Chromium and Edge (.github, windows/test, macos/test) |
 | [websockets](https://github.com/python-websockets/websockets) | latest on PyPI | BSD-3-Clause | tests: fake bridge program and WebSocket client |
 | [Pillow](https://python-pillow.org) | latest on PyPI | MIT-CMU | tests: reading the colours of the frames |
-| [Requests](https://requests.readthedocs.io) | latest on PyPI | [Apache-2.0](licenses/Apache-2.0.txt) | antivirus check (.github/verifica.py) |
-| [ClamAV](https://www.clamav.net) | Ubuntu package on the runner | GPL-2.0 | antivirus check before publishing (used as a program, not included) |
-| [Official GitHub Actions (checkout, upload-artifact, download-artifact, setup-python)](https://github.com/actions) | checkout v7, upload-artifact v7, download-artifact v8, setup-python v7 | MIT | builds, tests, check and release on GitHub Actions |
+| [Official GitHub Actions (checkout, upload-artifact, download-artifact, setup-python)](https://github.com/actions) | checkout v7.0.1, upload-artifact v7.0.2, download-artifact v8.0.2, setup-python v7.1.0 (pinned by commit SHA) | MIT | builds, tests and release on GitHub Actions; pinned by commit SHA, checked by .github/controlla-versioni.py |
 
 ## How to add third-party code
 

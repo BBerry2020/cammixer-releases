@@ -2,19 +2,17 @@
 
 Installers of **CamMixer**: virtual webcams with effects, backgrounds and lower thirds created by the extension for Microsoft Edge and Chrome, usable also in **Microsoft Teams desktop**, Zoom and the other apps on the computer.
 
-**All CamMixer releases are here**: Windows installer, macOS program and extension for Edge and Chrome. They are built on GitHub Actions and checked with antivirus engines and a sandbox before publishing; the source code is in a private repository.
+**All CamMixer releases are here**: Windows installer, macOS program and extension for Edge and Chrome. They are built on GitHub Actions and gated by supply-chain checks before publishing; the source code is in a private repository.
 
 The interface is in English; the flags at the top of the extension settings switch it to Italian (Italiano).
 
-## Direct download (version 1.3.1, extension 1.7.0)
+## Direct download (version 1.3.3, extension 1.7.2)
 
-- Windows 11: [CamMixer-Setup-1.3.1.exe](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.3.1.exe)
-- macOS: [CamMixer-macOS-1.3.1.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.3.1.zip)
-- Extension for Edge and Chrome (only needed without the Windows installer): [CamMixer-estensione-1.7.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-estensione-1.7.0.zip)
+- Windows 11: [CamMixer-Setup-1.3.3.exe](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.3.3.exe)
+- macOS: [CamMixer-macOS-1.3.3.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.3.3.zip)
+- Extension for Edge and Chrome (only needed without the Windows installer): [CamMixer-estensione-1.7.2.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-estensione-1.7.2.zip)
 
-What changed in each version: [CHANGELOG.md](CHANGELOG.md). Hashes and antivirus results: [`verifiche/CamMixer-1.3.1.md`](verifiche/CamMixer-1.3.1.md).
-
-**This version was published on request although the antivirus check did not pass.** Microsoft Defender and ClamAV find nothing, and the programs inside the installer are clean on every VirusTotal engine. On VirusTotal, 5 machine-learning or heuristic engines out of about 70 flag the installer itself; Microsoft no longer does. The macOS program and the zip files have no detections.
+What changed in each version: [CHANGELOG.md](CHANGELOG.md). Hashes, versions it is built with and supply-chain check results: [`verifiche/CamMixer-1.3.3.md`](verifiche/CamMixer-1.3.3.md).
 
 ## Windows 11
 
@@ -45,9 +43,16 @@ The script installs the bridge program for the user (no administrator), starts i
 
 Uninstall: `bash "$HOME/Library/Application Support/CamMixer/installa-mac.sh" --rimuovi`
 
-## Antivirus check
+## Supply-chain checks
 
-Before being published, every version is checked with Microsoft Defender, ClamAV, [VirusTotal](https://www.virustotal.com), MetaDefender (OPSWAT) and the Hybrid Analysis sandbox; if one of them reports something, it is not published. Only binary files go to the external services. The notes of every release, and the [`verifiche`](verifiche) folder, list the SHA-256, SHA-1 and MD5 hashes of the installer, of the zip files and of the programs they contain, with the VirusTotal validation of each file and the link to the report. To check a downloaded file: `Get-FileHash .\CamMixer-Setup-<version>.exe` in PowerShell, `shasum -a 256 CamMixer-macOS-<version>.zip` on the Mac.
+Before being published, every version goes through supply-chain checks; if one of them fails, it is not published:
+- every piece of third-party code is registered with version, licence and hashes, and the files included are identical to the official packages;
+- no known vulnerabilities in the libraries and build tools used (npm advisories, OSV.dev, GitHub Advisory Database);
+- libraries and build tools at their latest versions, with the build tools pinned by version, hash and signature (GitHub Actions by commit SHA).
+
+The notes of every release, and the [`verifiche`](verifiche) folder, list the SHA-256, SHA-1 and MD5 hashes of the installer, of the zip files and of the programs they contain, and the result of these checks. To check a downloaded file: `Get-FileHash .\CamMixer-Setup-<version>.exe` in PowerShell, `shasum -a 256 CamMixer-macOS-<version>.zip` on the Mac.
+
+Releases are not checked with antivirus services and the installer is not code-signed, so some heuristic or machine-learning engines may flag it. Earlier versions up to 1.3.1 were checked with antivirus engines: their results are in [`verifiche`](verifiche) and in the [CHANGELOG](CHANGELOG.md).
 
 ## Third-party code
 

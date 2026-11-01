@@ -1,6 +1,37 @@
 # CamMixer - version history
 
-Each release has two numbers: the **programs** (Windows installer and macOS program, `versione-programmi.txt`) and the **extension** for Edge and Chrome (`manifest.json`). The Windows installer always contains the extension. *Built with* lists the versions of the libraries and build tools; the full register is in [THIRD-PARTY.md](THIRD-PARTY.md). Hashes and antivirus results of every published release are in the release notes and in `verifiche/` in [cammixer-releases](https://github.com/BBerry2020/cammixer-releases).
+Each release has two numbers: the **programs** (Windows installer and macOS program, `versione-programmi.txt`) and the **extension** for Edge and Chrome (`manifest.json`). The Windows installer always contains the extension. *Built with* lists the versions of the libraries and build tools; the full register is in [THIRD-PARTY.md](THIRD-PARTY.md). Hashes and check results of every published release are in the release notes and in `verifiche/` in [cammixer-releases](https://github.com/BBerry2020/cammixer-releases).
+
+## 1.3.3 (extension 1.7.2) - 2026-11-01
+
+Everything in 1.3.2, plus:
+
+- New animated background: digital rain (columns of green characters falling at different speeds, the farther ones slower and darker).
+- **Releases are no longer checked with antivirus services** (owner's decision): the installer is legitimate, and the detections came from heuristic and machine-learning engines that change from build to build. Releases are gated instead by **supply-chain checks**:
+  - third-party code register in order, and the included files identical to the official npm packages;
+  - no known vulnerabilities (npm advisories, OSV.dev, GitHub Advisory Database);
+  - libraries and build tools at their latest versions;
+  - GitHub Actions pinned by commit SHA, with the SHA checked against the tag; Inno Setup pinned by version, hash and signature.
+- Release notes: hashes of every file and of the programs inside, versions it is built with, result of the supply-chain checks.
+
+Built with: Inno Setup 7.1.1 · MediaPipe Tasks Vision 1.2.0 · Three.js r187.
+
+## 1.3.2 (extension 1.7.1) - not published
+
+- Windows installer, in the language chosen at start (English or Italian):
+  - a page explains what CamMixer is and what the setup installs;
+  - a page shows the versions of Windows, Microsoft Edge, Google Chrome and Microsoft Teams found on the computer, and the camera privacy settings, with warnings when something is missing or turned off;
+  - the same data, with the result of the installation, is appended to `C:\Program Files\CamMixer\install.log`, and the detailed setup log is copied to `setup-last.log`, for troubleshooting;
+  - a "CamMixer" entry in the Start menu: the CamMixer webcam asks to start the program from there when it is not running.
+- Rotating 3D logo:
+  - the content (image or text) is now upright (it was turned by 90°);
+  - a new "Rotation" slider turns it to straighten an image.
+- Retro computer graphics:
+  - backgrounds: green phosphor terminal (text typed on an old monochrome monitor, with glow and scanlines), CGA graphics (320 pixels, 4 colours) and EGA graphics (320 pixels, 16 colours);
+  - video effects: green phosphor monitor, CGA palette (4 colours) and EGA palette (16 colours), with ordered dithering.
+- **Blocked by the antivirus check, never published.** The functional tests passed. On VirusTotal 5 engines flagged the installer: APEX, DeepInstinct, Elastic, Kaspersky (`not-a-virus` RemoteAdmin) and Microsoft (`Wacatac.C!ml`, a machine-learning detection that had not flagged 1.3.1). After this, the antivirus check was dropped (see 1.3.3).
+
+Built with: Inno Setup 7.1.1 · MediaPipe Tasks Vision 1.2.0 · Three.js r187.
 
 ## 1.3.1 (extension 1.7.0) - 2026-11-01
 
