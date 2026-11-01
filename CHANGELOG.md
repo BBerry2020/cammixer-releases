@@ -2,6 +2,19 @@
 
 Each release has two numbers: the **programs** (Windows installer and macOS program, `versione-programmi.txt`) and the **extension** for Edge and Chrome (`manifest.json`). The Windows installer always contains the extension. *Built with* lists the versions of the libraries and build tools; the full register is in [THIRD-PARTY.md](THIRD-PARTY.md). Hashes and check results of every published release are in the release notes and in `verifiche/` in [cammixer-releases](https://github.com/BBerry2020/cammixer-releases).
 
+## 1.8.0 (extension 1.12.0) - 2026-11-01
+
+- **VB-CABLE in the Windows installer**: the voice for Teams desktop and the other apps no longer needs a separate download. The installer contains the official VB-CABLE package by VB-Audio Software (Driver Pack 45, unchanged) and, when VB-CABLE is not on the computer, offers the task *Install VB-CABLE Virtual Audio Device* (checked):
+  - The origin of VB-CABLE : www.vb-cable.com. VB-CABLE is a donationware, all participations are welcome: the installer says so on its first page and on the tasks page, and the last page offers to open www.vb-cable.com to donate (distribution allowed by VB-Audio on these terms; licence notes in `licenses/VB-CABLE.txt`);
+  - VB-Audio's own setup installs it (`VBCABLE_Setup_x64.exe -i -h`, x64 and ARM64); Windows may ask to confirm the driver; restart Windows afterwards, as the last page reminds;
+  - `install.log` records VB-CABLE before and after the setup; if it cannot be installed, CamMixer is installed anyway and a message says how to install it later;
+  - uninstalling CamMixer asks whether to remove VB-CABLE too, only if the CamMixer installer installed it (silent: `/REMOVEVBCABLE`); otherwise it stays, and can be removed from Windows *Settings › Apps › VBCABLE, The Virtual Audio Cable*; unattended installations can skip it with `/MERGETASKS="!vbcable"`.
+- Supply chain: the VB-CABLE package is pinned by number and SHA-256 in `terze-parti.json`; the build checks the signatures of its setups and driver catalogs (VB-Audio, and Microsoft for the Windows 10/11 driver) and its driver service; the version check reads the VB-Audio page. New type in the third-party register: programs of other projects included in the installer.
+- Settings: the hint of *Send the voice too* says that the installer can install VB-CABLE.
+- Tests: on Windows x64 the real installer installs VB-CABLE (device and driver service checked), a second installation leaves it as it is, uninstalling with `/REMOVEVBCABLE` removes it; on Windows ARM64 VB-Audio's setup is run directly.
+
+Built with: Inno Setup 7.1.1 · MediaPipe Tasks Vision 1.2.0 · Three.js r187. Included, optional: VB-CABLE Driver Pack 45.
+
 ## 1.7.0 (extension 1.11.0) - 2026-11-01
 
 - **Voice for Teams desktop and the other apps, together with the video**: the mixed voice (microphone with the voice filters and effect of the virtual webcam sent to the apps) goes into a virtual audio cable, [VB-Cable](https://vb-audio.com/Cable/) by VB-Audio, installed once by the user (Windows has no virtual microphone without a signed driver). In Teams choose the microphone "CABLE Output (VB-Audio Virtual Cable)".

@@ -71,6 +71,25 @@ They are not in the repository, but the built programs contain part of them.
 - Distributed in: Windows installer
 - Changes: none
 
+## Programs of other projects included in the installer
+
+Official packages copied unchanged into the Windows installer (pinned by version, SHA-256 and digital signature) and installed only if the user chooses so; not in the repository.
+
+| Component | Version | Licence | Use |
+|---|---|---|---|
+| [VB-CABLE Virtual Audio Device](https://vb-audio.com/Cable/) | Driver Pack 45 | [Donationware (VB-Audio Software), distribution with other applications allowed with attribution](licenses/VB-CABLE.txt) | virtual audio cable that carries the voice with filters and effects from the extension to Teams, Zoom and the other apps (microphone «CABLE Output»). The Windows installer offers to install it when it is not on the computer (optional task): the package is copied unchanged to {app}\vbcable and installed with VBCABLE_Setup_x64.exe -i -h; .github/vbcable.ps1 downloads it for the build and checks its hash, its digital signatures and the driver service name. The origin of VB-CABLE : www.vb-cable.com. VB-CABLE is a donationware, all participations are welcome. |
+
+### VB-CABLE Virtual Audio Device
+
+- Copyright: V.Burel, VB-Audio Software
+- Source: https://vb-audio.com/Cable/ (VBCABLE_Driver_Pack45.zip, October 2024, Windows 32/64-bit and ARM64)
+- Package: https://download.vb-audio.com/Download_CABLE/VBCABLE_Driver_Pack45.zip (`SHA-256 b950e39f01af1d04ea623c8f6d8eb9b6ea5c477c637295fabf20631c85116bfb (1318877 bytes); setups and Windows 10/11 drivers signed by BUREL VINCENT Entrepreneur individuel, Windows 10/11 driver catalog signed by Microsoft Windows Hardware Compatibility Publisher, catalogs for older Windows by Vincent Burel`)
+- Distributed in: Windows installer
+- Changes: none (official package copied unchanged)
+- Version history:
+  - CamMixer 1.7.0: not included (installed by the user from vb-cable.com)
+  - CamMixer 1.8.0 and later: Driver Pack 45 included in the Windows installer as an optional task
+
 ## Downloaded by the extension during use
 
 Not included in the distributed files.

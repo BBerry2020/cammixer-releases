@@ -1,0 +1,38 @@
+VB-CABLE Virtual Audio Device - VB-Audio Software (V.Burel)
+============================================================
+
+The origin of VB-CABLE : www.vb-cable.com
+VB-CABLE is a donationware, all participations are welcome.
+
+How CamMixer distributes it
+---------------------------
+
+The Windows installer of CamMixer contains the official VB-CABLE package (VBCABLE_Driver_Pack45.zip,
+downloaded from https://vb-audio.com/Cable/ and copied unchanged) and offers to install it, as an
+optional task, when VB-CABLE is not already on the computer. VB-CABLE is a product of VB-Audio
+Software, not of CamMixer: it is shown with its name and origin in the installer, and you can donate
+or buy a licence on https://vb-audio.com/Cable/ (Donate button) if you find it useful.
+
+Terms
+-----
+
+VB-Audio Software allows VB-CABLE to be distributed with other applications, free or commercial,
+and installed by their installers, under the donationware model: the end user must be able to see
+and identify VB-CABLE as a VB-Audio application and to donate or pay for a licence; the distributor
+must give its origin (www.vb-cable.com) and say that VB-CABLE is a donationware, all participations
+are welcome. Companies, institutions and organizations whose users cannot see or pay for VB-CABLE
+must buy the licences they need on the VB-Audio webshop. Only the standard VB-CABLE may be
+distributed this way: VB-CABLE A+B and C+D cannot be distributed or bundled with other products
+(CamMixer does not include them).
+
+Full and current terms: https://vb-audio.com/Services/licensing.htm
+(section about VB-CABLE distribution) and the General Terms of the VB-Audio webshop,
+https://shop.vb-audio.com.
+
+Removing it
+-----------
+
+Windows: Settings > Apps > "VBCABLE, The Virtual Audio Cable" > Uninstall (the entry added by
+VB-Audio's setup), or run VBCABLE_Setup_x64.exe as administrator and press "Remove Driver"; then
+restart Windows. When you uninstall CamMixer, it asks whether to remove VB-CABLE too if it was
+installed by the CamMixer installer.
