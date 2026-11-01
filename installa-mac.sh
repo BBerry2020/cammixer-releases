@@ -1,13 +1,13 @@
 #!/bin/bash
-# CamMixer - programma ponte per macOS (webcam per Teams, Zoom... tramite OBS)
+# CamMixer - bridge program for macOS (webcam for Teams, Zoom... through OBS)
 #
-# Installazione (nel Terminale):
+# Installation (in Terminal):
 #   curl -fsSL https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/installa-mac.sh | bash
-# oppure, dalla cartella dello zip scaricato:  bash installa-mac.sh
-# Disinstallazione:  bash "$HOME/Library/Application Support/CamMixer/installa-mac.sh" --rimuovi
+# or, from the folder of the downloaded zip:  bash installa-mac.sh
+# Uninstall:  bash "$HOME/Library/Application Support/CamMixer/installa-mac.sh" --rimuovi
 #
-# Non servono permessi di amministratore: il programma va in ~/Library/Application Support/CamMixer,
-# parte a ogni accesso (LaunchAgent) e si aggiorna da solo dal repository pubblico dei rilasci.
+# No administrator rights needed: the program goes to ~/Library/Application Support/CamMixer,
+# starts at every sign-in (LaunchAgent) and updates itself from the public releases repository.
 set -euo pipefail
 CARTELLA="$HOME/Library/Application Support/CamMixer"
 ETICHETTA="it.cammixer.ponte"
@@ -21,28 +21,28 @@ if [ "${1:-}" = "--rimuovi" ]; then
   launchctl bootout "$DOMINIO/$ETICHETTA" 2>/dev/null || true
   rm -f "$AGENTE"
   rm -rf "$CARTELLA"
-  echo "CamMixer per macOS disinstallata."
+  echo "CamMixer for macOS uninstalled."
   exit 0
 fi
 
-if [ "$(uname -s)" != "Darwin" ]; then echo "Questo script è per macOS."; exit 1; fi
+if [ "$(uname -s)" != "Darwin" ]; then echo "This script is for macOS."; exit 1; fi
 mkdir -p "$CARTELLA" "$HOME/Library/LaunchAgents"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
-# 1. programma: accanto allo script (zip scaricato) oppure l'ultima versione pubblicata
+# 1. program: next to the script (downloaded zip) or the latest published version
 QUI=""
 if [ -n "${BASH_SOURCE[0]:-}" ] && [ -f "${BASH_SOURCE[0]}" ]; then QUI="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; fi
 if [ -n "$QUI" ] && [ -f "$QUI/cammixer-ponte" ] && [ "$QUI" != "$CARTELLA" ]; then
   SORGENTE="$QUI"
 else
-  echo "Scarico l'ultima versione..."
+  echo "Downloading the latest version..."
   curl -fsSL "$MANIFESTO" -o "$TMP/aggiornamenti.json"
   URL="$(plutil -extract macos.url raw -o - "$TMP/aggiornamenti.json")"
   IMPRONTA="$(plutil -extract macos.sha256 raw -o - "$TMP/aggiornamenti.json")"
-  case "$URL" in "$PREFISSO"* | "$PREFISSO_GIT"*) ;; *) echo "Indirizzo di scaricamento non valido: $URL"; exit 1 ;; esac
+  case "$URL" in "$PREFISSO"* | "$PREFISSO_GIT"*) ;; *) echo "Download address not valid: $URL"; exit 1 ;; esac
   curl -fsSL "$URL" -o "$TMP/ponte.zip"
-  if [ "$(shasum -a 256 "$TMP/ponte.zip" | cut -d' ' -f1)" != "$IMPRONTA" ]; then echo "File scaricato non valido (impronta diversa)."; exit 1; fi
+  if [ "$(shasum -a 256 "$TMP/ponte.zip" | cut -d' ' -f1)" != "$IMPRONTA" ]; then echo "Downloaded file not valid (different hash)."; exit 1; fi
   ditto -x -k "$TMP/ponte.zip" "$TMP/x"
   SORGENTE="$TMP/x"
 fi
@@ -50,11 +50,11 @@ fi
 launchctl bootout "$DOMINIO/$ETICHETTA" 2>/dev/null || true
 install -m 755 "$SORGENTE/cammixer-ponte" "$CARTELLA/cammixer-ponte"
 if [ -f "$SORGENTE/installa-mac.sh" ]; then install -m 755 "$SORGENTE/installa-mac.sh" "$CARTELLA/installa-mac.sh"; fi
-xattr -cr "$CARTELLA" 2>/dev/null || true   # toglie il contrassegno "scaricato da Internet"
+xattr -cr "$CARTELLA" 2>/dev/null || true   # removes the "downloaded from the Internet" mark
 VERSIONE="$("$CARTELLA/cammixer-ponte" --versione)"
-INDIRIZZO="$("$CARTELLA/cammixer-ponte" --indirizzo-obs)"   # crea anche la chiave del flusso
+INDIRIZZO="$("$CARTELLA/cammixer-ponte" --indirizzo-obs)"   # also creates the stream key
 
-# 2. avvio a ogni accesso; launchd lo riavvia dopo un aggiornamento o un errore
+# 2. start at every sign-in; launchd restarts it after an update or an error
 cat > "$AGENTE" <<PLIST
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -76,14 +76,14 @@ printf '%s' "$INDIRIZZO" | pbcopy 2>/dev/null || true
 
 cat <<TESTO
 
-CamMixer per macOS $VERSIONE installata e avviata.
+CamMixer for macOS $VERSIONE installed and running.
 
-Ultimi passi (una volta sola), con OBS Studio (gratuito: https://obsproject.com):
-  1. In OBS, sotto "Sorgenti" premi +, scegli "Browser" e incolla questo URL (è già negli appunti):
+Last steps (only once), with OBS Studio (free: https://obsproject.com):
+  1. In OBS, under "Sources" press +, choose "Browser" and paste this URL (it is already in the clipboard):
        $INDIRIZZO
-     Larghezza 1280, altezza 720. Ingrandisci la sorgente a tutto schermo (tasto destro > Trasforma > Adatta allo schermo).
-  2. Premi "Avvia fotocamera virtuale" (la prima volta macOS chiede di consentire l'estensione di sistema di OBS).
-  3. In Teams: Impostazioni > Dispositivi > Fotocamera > "OBS Virtual Camera".
-Il video arriva dall'estensione CamMixer di Microsoft Edge (o Chrome): tienilo aperto.
-L'URL contiene una chiave privata: non condividerlo.
+     Width 1280, height 720. Stretch the source to the whole screen (right click > Transform > Fit to screen).
+  2. Press "Start Virtual Camera" (the first time macOS asks you to allow the OBS system extension).
+  3. In Teams: Settings > Devices > Camera > "OBS Virtual Camera".
+The video comes from the CamMixer extension for Microsoft Edge (or Chrome): keep it open.
+The URL contains a private key: do not share it.
 TESTO
