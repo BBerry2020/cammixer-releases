@@ -52,4 +52,4 @@ To check a downloaded file: in PowerShell `Get-FileHash .\CamMixer-Setup-1.4.0.e
 - Build tools pinned: GitHub Actions by commit SHA, Inno Setup by version, SHA-256 and digital signature.
 
 The installer is not code-signed and releases are not checked with antivirus services.
-Notes generated on 2026-11-01 15:05 UTC.
+Notes generated on 2026-11-01 15:47 UTC.

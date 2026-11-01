@@ -3,17 +3,17 @@
   "data": "2026-11-01",
   "windows": {
     "versione": "1.4.0",
-    "url": "https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.4.0.exe",
+    "url": "https://github.com/BBerry2020/cammixer-releases/releases/download/v1.4.0/CamMixer-Setup-1.4.0.exe",
     "sha256": "59cd1b73507f56b7b94d456263a4cdefe59920b9bd027ea82d29939b3054a1ab"
   },
   "macos": {
     "versione": "1.4.0",
-    "url": "https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.4.0.zip",
+    "url": "https://github.com/BBerry2020/cammixer-releases/releases/download/v1.4.0/CamMixer-macOS-1.4.0.zip",
     "sha256": "1fc8249c899d765588646433e156ef77c82cafd662e9bf3b9ad967944c020146"
   },
   "estensione": {
     "versione": "1.8.0",
-    "url": "https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-estensione-1.8.0.zip",
+    "url": "https://github.com/BBerry2020/cammixer-releases/releases/download/v1.4.0/CamMixer-estensione-1.8.0.zip",
     "sha256": "bbc11dbfebd76d80a0d0361f5c99d86b1c7f00951de80dba1b708095e36f8485"
   }
 }

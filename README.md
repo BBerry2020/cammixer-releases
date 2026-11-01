@@ -6,17 +6,9 @@ Installers of **CamMixer**: virtual webcams with effects, backgrounds and lower 
 
 The interface is in English; the flags at the top of the extension settings switch it to Italian (Italiano).
 
-## Direct download (version 1.4.0, extension 1.8.0)
-
-- Windows 11: [CamMixer-Setup-1.4.0.exe](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-Setup-1.4.0.exe)
-- macOS: [CamMixer-macOS-1.4.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-macOS-1.4.0.zip)
-- Extension for Edge and Chrome (only needed without the Windows installer): [CamMixer-estensione-1.8.0.zip](https://raw.githubusercontent.com/BBerry2020/cammixer-releases/main/scarica/CamMixer-estensione-1.8.0.zip)
-
-What changed in each version: [CHANGELOG.md](CHANGELOG.md). Hashes, versions it is built with and supply-chain check results: [`verifiche/CamMixer-1.4.0.md`](verifiche/CamMixer-1.4.0.md).
-
 ## Windows 11
 
-1. Download **CamMixer-Setup-*version*.exe** from the link above and run it. The installer asks for the language (English or Italian). It is not signed: if "Windows protected your PC" appears, choose *More info › Run anyway*.
+1. Download **CamMixer-Setup-*version*.exe** from the [latest release](https://github.com/BBerry2020/cammixer-releases/releases/latest) and run it. The installer asks for the language (English or Italian). It is not signed: if "Windows protected your PC" appears, choose *More info › Run anyway*.
 2. In Teams: *Settings › Devices › Camera › **CamMixer***.
 3. In the extension settings, box *Webcam for Teams, Zoom and the other apps on the computer*, choose which virtual webcam to send. Microsoft Edge must stay open.
 
@@ -26,7 +18,7 @@ When a new version comes out, the extension settings show *Open the releases pag
 
 On Windows there is no need to download it: it is inside the installer, which copies it and keeps it updated. Otherwise (macOS, or websites only):
 
-1. Download **CamMixer-estensione-*version*.zip** from the link above and extract it to a folder you will not move.
+1. Download **CamMixer-estensione-*version*.zip** from the [latest release](https://github.com/BBerry2020/cammixer-releases/releases/latest) and extract it to a folder you will not move.
 2. Open `edge://extensions` (or `chrome://extensions`), turn on **Developer mode**, press **Load unpacked** and choose the extracted folder.
 
 When a new version comes out the extension settings say so: extract the new zip to the same folder and the extension reloads itself.
@@ -50,9 +42,7 @@ Before being published, every version goes through supply-chain checks; if one o
 - no known vulnerabilities in the libraries and build tools used (npm advisories, OSV.dev, GitHub Advisory Database);
 - libraries and build tools at their latest versions, with the build tools pinned by version, hash and signature (GitHub Actions by commit SHA).
 
-The notes of every release, and the [`verifiche`](verifiche) folder, list the SHA-256, SHA-1 and MD5 hashes of the installer, of the zip files and of the programs they contain, and the result of these checks. To check a downloaded file: `Get-FileHash .\CamMixer-Setup-<version>.exe` in PowerShell, `shasum -a 256 CamMixer-macOS-<version>.zip` on the Mac.
-
-Releases are not checked with antivirus services and the installer is not code-signed, so some heuristic or machine-learning engines may flag it. Earlier versions up to 1.3.1 were checked with antivirus engines: their results are in [`verifiche`](verifiche) and in the [CHANGELOG](CHANGELOG.md).
+The notes of every release, and the [`verifiche`](verifiche) folder, list the SHA-256, SHA-1 and MD5 hashes of the installer, of the zip files and of the programs they contain, and the result of these checks. To check a downloaded file: `Get-FileHash .\CamMixer-Setup-<version>.exe` in PowerShell, `shasum -a 256 CamMixer-macOS-<version>.zip` on the Mac. The installer is not code-signed and releases are not checked with antivirus services, so some heuristic engines may flag it.
 
 ## Third-party code
 
